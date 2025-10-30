@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baka-Ry - Recept Details</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .detail-container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 40px;
+      background-color: #fef8fa;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .detail-header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #d4a5b5;
+    }
+
+    .detail-header h1 {
+      color: #5a4234;
+      font-size: 42px;
+      margin-bottom: 15px;
+      font-family: 'Georgia', serif;
+    }
+
+    .rating-difficulty {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .rating-difficulty div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      color: #666;
+    }
+
+    .stars {
+      color: #ffd700;
+      font-size: 24px;
+    }
+
+    .difficulty-badge {
+      background-color: #d4a5b5;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .detail-image {
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      margin: 30px auto;
+      display: block;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 3px solid #d4a5b5;
+    }
+
+    .detail-section {
+      background-color: white;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      border-left: 5px solid #d4a5b5;
+    }
+
+    .detail-section h2 {
+      color: #5a4234;
+      font-size: 26px;
+      margin-bottom: 15px;
+      font-family: 'Georgia', serif;
+    }
+
+    .detail-section p {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .ingredients-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .ingredient-tag {
+      background-color: #fce4ec;
+      color: #5a4234;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      border: 1px solid #d4a5b5;
+    }
+
+    .recipe-steps {
+      color: #333;
+      font-size: 16px;
+      line-height: 2;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #d4a5b5;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #c28da0;
+      transform: scale(1.05);
+    }
+
+    .no-recipe {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .no-recipe h2 {
+      color: #666;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .detail-container {
+        padding: 20px;
+      }
+
+      .detail-header h1 {
+        font-size: 32px;
+      }
+
+      .detail-image {
+        height: 300px;
+      }
+
+      .rating-difficulty {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-content">
+      <div onclick="window.location.href='../'">Home</div>
+
+      <div class="active" onclick="window.location.href='overzicht.html'">
+        <span>Recepten</span>
+        <div class="arrow">&gt;</div>
+      </div>
+
+      <div class="eigen" onclick="window.location.href='instuurpagina.html'">Eigen<br>recept</div>
+
+      <img src="../fotos/deer.png" alt="deer" class="deer">
+      <div class="brand">BAKA RY</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <span class="page-title">detailpagina</span>
+      <span class="logo">BAKA-RY</span>
+    </header>
+
+    <div id="detailContent"></div>
+  </main>
+
+  <script src="../script.js"></script>
+  <script>
+    // Details data
+    const Details = {
+      "Strawberry Tart": {
+        Details: "Lekker aarbeien tartje. Super romig en zoet.",
+        Benodigdheden: "aardbei, slagroom, taartbodem, suiker",
+        Recept: "Maak de taartbodem klaar, voeg room toe, beleg met aardbeien en bestrooi met suiker.",
+        Moeilijkheidsgraad: 3,
+        Sterren: 5,
+        Afbeelding: "./fotos/strawberry_tart.jpg"
+      },
+      "Chocolate Mousse": {
+        Details: "Luchtige en romige chocolademousse.",
+        Benodigdheden: "pure chocolade, eieren, suiker, slagroom",
+        Recept: "Smelt chocolade, klop eieren en suiker, vouw room erdoor en laat opstijven in de koelkast.",
+        Moeilijkheidsgraad: 2,
+        Sterren: 5,
+        Afbeelding: "./fotos/chocolate_mousse.jpg"
+      },
+      "Lemon Pie": {
+        Details: "Frisse citroentaart met knapperige bodem.",
+        Benodigdheden: "citroen, eieren, suiker, taartbodem, boter",
+        Recept: "Maak de bodem, bereid citroencrème en bak kort. Laat afkoelen en serveer.",
+        Moeilijkheidsgraad: 3,
+        Sterren: 4,
+        Afbeelding: "./fotos/lemon_pie.jpg"
+      },
+      "Vanilla Cupcake": {
+        Details: "Luchtige vanillecupcakes met zachte frosting.",
+        Benodigdheden: "bloem, eieren, boter, suiker, vanille-extract, melk",
+        Recept: "Mix de ingrediënten, vul vormpjes en bak. Voeg frosting toe als ze afgekoeld zijn.",
+        Moeilijkheidsgraad: 2,
+        Sterren: 4,
+        Afbeelding: "./fotos/vanilla_cupcake.jpg"
+      },
+      "Carrot Cake": {
+        Details: "Heerlijke worteltaart met een romige roomkaaslaag.",
+        Benodigdheden: "wortel, bloem, eieren, suiker, olie, roomkaas, noten",
+        Recept: "Meng de droge en natte ingrediënten, voeg geraspte wortel toe, bak en bestrijk met roomkaas frosting.",
+        Moeilijkheidsgraad: 3,
+        Sterren: 5,
+        Afbeelding: "./fotos/carrot_cake.jpg"
+      },
+      "Apple Crumble": {
+        Details: "Warme appeltaart met knapperige crumble bovenop.",
+        Benodigdheden: "appel, bloem, boter, suiker, kaneel",
+        Recept: "Snijd appels, meng met suiker en kaneel, bedek met crumble en bak goudbruin.",
+        Moeilijkheidsgraad: 2,
+        Sterren: 5,
+        Afbeelding: "./fotos/apple_crumble.jpg"
+      },
+      "Matcha Roll": {
+        Details: "Luchtige rolcake met groene theesmaak.",
+        Benodigdheden: "bloem, eieren, suiker, matcha, slagroom",
+        Recept: "Bak een dunne sponge cake met matcha, rol met slagroom en laat opstijven.",
+        Moeilijkheidsgraad: 3,
+        Sterren: 4,
+        Afbeelding: "./fotos/matcha_roll.jpg"
+      },
+      "Tiramisu": {
+        Details: "Italiaanse koffiedessert met mascarpone en cacao.",
+        Benodigdheden: "mascarpone, eieren, suiker, koffie, lange vingers, cacao",
+        Recept: "Doop lange vingers in koffie, laag mascarpone crème, herhaal en bestrooi met cacao.",
+        Moeilijkheidsgraad: 3,
+        Sterren: 5,
+        Afbeelding: "./fotos/tiramisu.jpg"
+      },
+      "Cheesecake": {
+        Details: "Romige cheesecake met een krokante bodem.",
+        Benodigdheden: "roomkaas, eieren, suiker, koekjes, boter",
+        Recept: "Maak een koekjesbodem, meng de vulling en bak of laat opstijven in de koelkast.",
+        Moeilijkheidsgraad: 3,
+        Sterren: 5,
+        Afbeelding: "./fotos/cheesecake.jpg"
+      },
+      "Brownie": {
+        Details: "Rijke en smeuïge chocoladebrownie.",
+        Benodigdheden: "pure chocolade, boter, suiker, eieren, bloem",
+        Recept: "Smelt chocolade en boter, voeg suiker en eieren toe, meng met bloem en bak.",
+        Moeilijkheidsgraad: 2,
+        Sterren: 5,
+        Afbeelding: "./fotos/brownie.jpg"
+      },
+      "Macaron": {
+        Details: "Knapperige buitenkant met zachte binnenkant.",
+        Benodigdheden: "amandelmeel, eiwitten, suiker, kleurstof, vulling",
+        Recept: "Klop eiwitten met suiker, spatel amandelmeel erdoor, bak kleine rondjes en vul met ganache of crème.",
+        Moeilijkheidsgraad: 5,
+        Sterren: 5,
+        Afbeelding: "./fotos/macaron.jpg"
+      },
+      "Banana Bread": {
+        Details: "Luchtig en zoet bananenbrood.",
+        Benodigdheden: "rijpe bananen, bloem, eieren, boter, suiker, bakpoeder",
+        Recept: "Prak bananen, meng met overige ingrediënten, giet in bakvorm en bak goudbruin.",
+        Moeilijkheidsgraad: 2,
+        Sterren: 4,
+        Afbeelding: "./fotos/banana_bread.jpg"
+      },
+    };
+    
+    // Rest van het script
+    // Haal de receptnaam uit de URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const recipeName = urlParams.get('recipe');
+    
+    const detailContent = document.getElementById('detailContent');
+
+    if (recipeName && Details[recipeName]) {
+      const recipe = Details[recipeName];
+      
+      // Genereer sterren
+      const stars = '⭐'.repeat(recipe.Sterren);
+      
+      // Splits ingrediënten
+      const ingredients = recipe.Benodigdheden.split(',').map(i => i.trim());
+      
+      detailContent.innerHTML = `
+        <div class="detail-container">
+          <div class="detail-header">
+            <h1>${recipeName}</h1>
+            <div class="rating-difficulty">
+              <div>
+                <span class="stars">${stars}</span>
+                <span>${recipe.Sterren}/5</span>
+              </div>
+              <div>
+                <span>Moeilijkheid:</span>
+                <span class="difficulty-badge">${recipe.Moeilijkheidsgraad}/5</span>
+              </div>
+            </div>
+          </div>
+
+          <img src="${recipe.Afbeelding}" alt="${recipeName}" class="detail-image" 
+               onerror="this.style.display='none'">
+
+          <div class="detail-section">
+            <h2>Over dit recept</h2>
+            <p>${recipe.Details}</p>
+          </div>
+
+          <div class="detail-section">
+            <h2>Benodigdheden</h2>
+            <div class="ingredients-list">
+              ${ingredients.map(ing => `<span class="ingredient-tag">${ing}</span>`).join('')}
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h2>Bereidingswijze</h2>
+            <div class="recipe-steps">${recipe.Recept}</div>
+          </div>
+
+          <a href="overzicht.html" class="back-button">← Terug naar overzicht</a>
+        </div>
+      `;
+    } else {
+      detailContent.innerHTML = `
+        <div class="detail-container">
+          <div class="no-recipe">
+            <h2>😕 Recept niet gevonden</h2>
+            <p>Het recept dat je zoekt bestaat niet of is verwijderd.</p>
+            <a href="overzicht.html" class="back-button">Terug naar overzicht</a>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

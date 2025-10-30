@@ -97,6 +97,9 @@ body {
   .recipe {
     text-align: center;
     max-width: 300px;
+    min-width: 250px;
+    max-height: 300px;
+    min-height: 250px;
   }
   
   .recipe h3 {
@@ -106,8 +109,8 @@ body {
   }
   
   .img-box {
-    width: 380px;
-    height: 290px;
+    width: 100%;
+    height: 75%;
     background-color: #d9d9d9;
     border: 1px solid #000;
     background-image: linear-gradient(to bottom right, transparent 49%, black 50%, black 51%, transparent 52%);

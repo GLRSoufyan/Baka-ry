@@ -4,21 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Baka-Ry Recepten</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <aside class="sidebar">
     <div class="sidebar-content">
-      <div class="home">Home</div>
+      
+      <div onclick="window.location.href='../'">Home</div>
 
       <div class="active">
         <span>Recepten</span>
         <div class="arrow">&gt;</div>
       </div>
 
-      <div class="eigen">Eigen<br>recept</div>
+       <div class="eigen" onclick="window.location.href='../paginas/instuur.html'">Eigen<br>recept</div>
 
-      <img src="fotos/deer.png" alt="deer" class="deer">
+      <img src="../fotos/deer.png" alt="deer" class="deer">
       <div class="brand">BAKA RY</div>
     </div>
   </aside>
@@ -36,7 +37,7 @@
           "Strawberry Tart", "Chocolate Mousse", "Lemon Pie",
           "Vanilla Cupcake", "Carrot Cake", "Apple Crumble",
           "Matcha Roll", "Tiramisu", "Cheesecake",
-          "Brownie", "Macaron", "Banana Bread"
+          "Brownie", "Macaron", "Banana Bread", 
         ];
         document.write(
           desserts.map(name => `
@@ -51,6 +52,6 @@
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>
