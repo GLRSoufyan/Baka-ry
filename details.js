@@ -1,8 +1,8 @@
 const Details = {
     "Brown Butter Almond Croissant Pumpkin Coffee Cake": {
-        Details: "Lekker aarbeien tartje. Super romig en zoet.",
-        Benodigdheden: "aardbei, slagroom, taartbodem, suiker",
-        Recept: "Maak de taartbodem klaar, voeg room toe, beleg met aardbeien en bestrooi met suiker.",
+        Details: "Heerlijke koffie-cake met een rijke bruine boter en een knapperige amandeltopping.",
+        Benodigdheden: "bruine boter, amandelen, bloem, suiker, eieren, melk, bakpoeder",
+        Recept: "Smelt de bruine boter en meng met de andere ingrediënten. Bak in een vorm en top af met amandelen.",
         Moeilijkheidsgraad: 3,
         Sterren: 5,
         Afbeelding: "../fotos/brownbutter.jpg"
@@ -24,78 +24,79 @@ const Details = {
         Afbeelding: "../fotos/chocbread.jpg"
     },
     "Pumpkin Pecan Crisp with Maple Cinnamon Brown Butter Sauce": {
-        Details: "Luchtige vanillecupcakes met zachte frosting.",
-        Benodigdheden: "bloem, eieren, boter, suiker, vanille-extract, melk",
-        Recept: "Mix de ingrediënten, vul vormpjes en bak. Voeg frosting toe als ze afgekoeld zijn.",
+        Details: "Heerlijke herfstcombinatie van pompoen en pecannoten met een warme bruine boter saus.",
+        Benodigdheden: "pompoen, pecannoten, bruine boter, kaneel, suiker, bloem",
+        Recept: "Meng de pompoen met suiker, voeg de pecannoten toe en bak in de oven. Serveer met bruine boter saus.",
         Moeilijkheidsgraad: 2,
         Sterren: 4,
         Afbeelding: "../fotos/pumpkinpecan.jpg"
     },
     "Homemade Old-Fashioned Apple Cider Donuts": {
-        Details: "Heerlijke worteltaart met een romige roomkaaslaag.",
-        Benodigdheden: "wortel, bloem, eieren, suiker, olie, roomkaas, noten",
-        Recept: "Meng de droge en natte ingrediënten, voeg geraspte wortel toe, bak en bestrijk met roomkaas frosting.",
+        Details: "Traditionele donuts met appelcider, perfect voor herfstomstandigheden.",
+        Benodigdheden: "appelcider, bloem, suiker, kaneel, eieren, bakpoeder",
+        Recept: "Meng alle ingrediënten en bak de donuts in een vorm. Bestrooi met suiker en kaneel.",
         Moeilijkheidsgraad: 3,
         Sterren: 5,
         Afbeelding: "../fotos/appledonuts.jpg"
     },
     "Mini Classic Cinnamon Roll": {
-        Details: "Warme appeltaart met knapperige crumble bovenop.",
-        Benodigdheden: "appel, bloem, boter, suiker, kaneel",
-        Recept: "Snijd appels, meng met suiker en kaneel, bedek met crumble en bak goudbruin.",
+        Details: "Warme, klassieke kaneelrolletjes met een romige glazuur.",
+        Benodigdheden: "bloem, suiker, boter, kaneel, gist",
+        Recept: "Rol het deeg uit, strooi kaneelsuiker erover en bak. Voeg glazuur toe wanneer ze afgekoeld zijn.",
         Moeilijkheidsgraad: 2,
         Sterren: 5,
         Afbeelding: "../fotos/cinnaroll.jpg"
     },
     "Cinnamon Crunch Apple Pie Cathead Biscuits": {
-        Details: "Luchtige rolcake met groene theesmaak.",
-        Benodigdheden: "bloem, eieren, suiker, matcha, slagroom",
-        Recept: "Bak een dunne sponge cake met matcha, rol met slagroom en laat opstijven.",
+        Details: "Luchtige biscuits met een smaakvolle kaneel-crunch en appelvulling.",
+        Benodigdheden: "bloem, appel, kaneel, boter, melk, suiker",
+        Recept: "Maak het deeg voor de biscuits, voeg appel en kaneel toe, bak de biscuits goudbruin.",
         Moeilijkheidsgraad: 3,
         Sterren: 4,
         Afbeelding: "../fotos/cinnacrunch.jpg"
     },
     "Brown Butter Sweet Potato Cake": {
-        Details: "Italiaanse koffiedessert met mascarpone en cacao.",
-        Benodigdheden: "mascarpone, eieren, suiker, koffie, lange vingers, cacao",
-        Recept: "Doop lange vingers in koffie, laag mascarpone crème, herhaal en bestrooi met cacao.",
+        Details: "Heerlijk zachte cake gemaakt met bruine boter en zoete aardappel.",
+        Benodigdheden: "zoete aardappel, bruine boter, bloem, suiker, eieren, bakpoeder",
+        Recept: "Kook de zoete aardappel en meng met de andere ingrediënten. Bak in een cakevorm.",
         Moeilijkheidsgraad: 3,
         Sterren: 5,
         Afbeelding: "../fotos/potatocake.jpg"
     },
     "Apple Pie Maple Donut Bars": {
-        Details: "Romige cheesecake met een krokante bodem.",
-        Benodigdheden: "roomkaas, eieren, suiker, koekjes, boter",
-        Recept: "Maak een koekjesbodem, meng de vulling en bak of laat opstijven in de koelkast.",
+        Details: "Romige appelpie met een esdoornachtige smaak in een donutvorm.",
+        Benodigdheden: "appel, bloem, suiker, kaneel, esdoornsiroop, boter",
+        Recept: "Maak een deeg voor de bodem en de vulling, bak in een vierkante vorm en snijd in bars.",
         Moeilijkheidsgraad: 3,
         Sterren: 5,
         Afbeelding: "../fotos/donutbars.jpg"
     },
     "Apple Pie Brown Butter Oatmeal Cookie Skillet": {
-        Details: "Rijke en smeuïge chocoladebrownie.",
-        Benodigdheden: "pure chocolade, boter, suiker, eieren, bloem",
-        Recept: "Smelt chocolade en boter, voeg suiker en eieren toe, meng met bloem en bak.",
+        Details: "Een heerlijke koek met appelpie-smaak, gemaakt in een skillet met bruine boter.",
+        Benodigdheden: "havermout, bloem, appel, bruine boter, suiker",
+        Recept: "Meng de ingrediënten en bak het geheel in een skillet voor een crispy buitenkant.",
         Moeilijkheidsgraad: 2,
         Sterren: 5,
         Afbeelding: "../fotos/applepie.jpg"
     },
     "Old-Fashioned Chocolate Donuts Holes with Salted Chocolate Hazelnut Glaze": {
-        Details: "Knapperige buitenkant met zachte binnenkant.",
-        Benodigdheden: "amandelmeel, eiwitten, suiker, kleurstof, vulling",
-        Recept: "Klop eiwitten met suiker, spatel amandelmeel erdoor, bak kleine rondjes en vul met ganache of crème.",
+        Details: "Heerlijke klassieke chocolade-donuts met een gezouten hazelnootglazuur.",
+        Benodigdheden: "pure chocolade, hazelnoten, suiker, bloem, eiwitten, kleurstof",
+        Recept: "Maak het donutdeeg, bak de gaten, en bedek met het gezouten chocolade-hazelnootglazuur.",
         Moeilijkheidsgraad: 5,
         Sterren: 5,
         Afbeelding: "../fotos/chocdonut.jpg"
     },
     "Bourbon Almond Praline Sweet Potato Cheesecake": {
-        Details: "Luchtig en zoet bananenbrood.",
-        Benodigdheden: "rijpe bananen, bloem, eieren, boter, suiker, bakpoeder",
-        Recept: "Prak bananen, meng met overige ingrediënten, giet in bakvorm en bak goudbruin.",
-        Moeilijkheidsgraad: 2,
+        Details: "Romige cheesecake met een vleugje bourbon en een heerlijke amandel-praline topping.",
+        Benodigdheden: "zoete aardappel, bourbon, amandelen, roomkaas, suiker, eieren",
+        Recept: "Meng de ingrediënten voor de cheesecake en bak in een taartvorm. Top af met de amandel-praline.",
+        Moeilijkheidsgraad: 3,
         Sterren: 4,
         Afbeelding: "../fotos/almpraline.jpg"
     },
 };
+
  
 const recipeList = document.getElementById('recipe-list');
  
