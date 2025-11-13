@@ -50,32 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Helper functie om recepten te laden op de overzichtpagina
-function loadRecipes() {
-    const recipesContainer = document.querySelector('.recipes');
-    if (!recipesContainer) return;
-
-    const desserts = [
-        "Strawberry Tart", "Chocolate Mousse", "Lemon Pie",
-        "Vanilla Cupcake", "Carrot Cake", "Apple Crumble",
-        "Matcha Roll", "Tiramisu", "Cheesecake",
-        "Brownie", "Macaron", "Banana Bread"
-    ];
-
-    recipesContainer.innerHTML = desserts.map(name => `
-        <div class="recipe">
-            <h3>${name}</h3>
-            <div class="img-box"></div>
-            <button onclick="goToDetails('${name}')">See recept</button>
-        </div>
-    `).join('');
-}
-
-// Laad recepten als we op de overzichtpagina zijn
-if (window.location.pathname.includes('overzicht.html')) {
-    document.addEventListener('DOMContentLoaded', loadRecipes);
-}
-
 // Form validatie voor instuurpagina
 function validateRecipeForm(formData) {
     if (!formData.name || formData.name.trim() === '') {

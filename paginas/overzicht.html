@@ -9,15 +9,11 @@
 <body>
   <aside class="sidebar">
     <div class="sidebar-content">
-      
       <div class="menubaritem" onclick="window.location.href='../'">Home</div>
-
       <div class="active menubaritem">
         <span>Recepten</span>
       </div>
-
-       <div class="eigen menubaritem" onclick="window.location.href='../paginas/instuur.html'">Eigen<br>recept</div>
-
+      <div class="eigen menubaritem" onclick="window.location.href='../paginas/instuur.html'">Eigen<br>recept</div>
       <img src="../fotos/deer.png" alt="deer" class="deer">
       <div class="brand">BAKA RY</div>
     </div>
@@ -29,28 +25,10 @@
       <span class="logo">BAKA-RY</span>
     </header>
 
-    <section class="recipes">
-
-      <script>
-        const desserts = [
-          "Strawberry Tart", "Chocolate Mousse", "Lemon Pie",
-          "Vanilla Cupcake", "Carrot Cake", "Apple Crumble",
-          "Matcha Roll", "Tiramisu", "Cheesecake",
-          "Brownie", "Macaron", "Banana Bread", 
-        ];
-        document.write(
-          desserts.map(name => `
-            <div class="recipe">
-              <h3>${name}</h3>
-              <div class="img-box"></div>
-              <button onclick="goToDetails()">See recept</button>
-            </div>
-          `).join('')
-        );
-      </script>
-    </section>
+    <section class="recipes" id="recipe-list"></section>
   </main>
 
+  <script src="../details.js"></script>
   <script src="../script.js"></script>
 </body>
 </html>

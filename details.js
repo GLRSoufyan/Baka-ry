@@ -96,3 +96,31 @@ const Details = {
         Afbeelding: "./fotos/almpraline.jpg"
     },
 };
+
+const recipeList = document.getElementById('recipe-list');
+
+function showRecipes() {
+    Object.keys(Details).forEach(recipeName => {
+        const recipe = Details[recipeName];
+        
+        const recipeDiv = document.createElement('div');
+        recipeDiv.classList.add('recipe');
+        
+        recipeDiv.innerHTML = `
+            <h3>${recipeName}</h3>
+            <div class="img-box">
+                <img src="${recipe.Afbeelding}" alt="${recipeName}">
+            </div>
+            <button onclick="goToDetails('${recipeName}')">See recept</button>
+        `;
+        
+        recipeList.appendChild(recipeDiv);
+    });
+}
+
+function goToDetails(recipeName) {
+    localStorage.setItem('currentRecipe', recipeName);
+    window.location.href = 'recept-details.html';
+}
+
+window.onload = showRecipes;
