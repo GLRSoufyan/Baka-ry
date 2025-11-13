@@ -6,6 +6,7 @@
   <title>Baka-Ry - Recept Details</title>
   <link rel="stylesheet" href="../style.css">
   <style>
+    /* Je CSS-stijlen hier zoals eerder gedefinieerd */
     .detail-container {
       max-width: 900px;
       margin: 30px auto;
@@ -168,14 +169,10 @@
   <aside class="sidebar">
     <div class="sidebar-content">
       <div class="menubaritem" onclick="window.location.href='../'">Home</div>
-
       <div class="active menubaritem" onclick="window.location.href='overzicht.html'">
         <span>Recepten</span>
-       
       </div>
-
       <div class="eigen menubaritem" onclick="window.location.href='instuurpagina.html'">Eigen<br>recept</div>
-
       <img src="../fotos/deer.png" alt="deer" class="deer">
       <div class="brand">BAKA RY</div>
     </div>
@@ -183,16 +180,15 @@
 
   <main class="main">
     <header class="header">
-      <span class="page-title">Home</span>
+      <span class="page-title">Recept Details</span>
       <span class="logo">BAKA-RY</span>
     </header>
 
     <div id="detailContent"></div>
   </main>
 
-  <script src="../script.js"></script>
+  <script src="../details.js"></script>  <!-- Zorg ervoor dat details.js correct geladen wordt -->
   <script>
-    // Rest van het script
     // Haal de receptnaam uit de URL
     const urlParams = new URLSearchParams(window.location.search);
     const recipeName = urlParams.get('recipe');

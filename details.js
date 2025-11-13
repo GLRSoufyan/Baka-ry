@@ -108,10 +108,8 @@ function showRecipes() {
         
         recipeDiv.innerHTML = `
             <h3>${recipeName}</h3>
-            <div class="img-box">
-                <img src="${recipe.Afbeelding}" alt="${recipeName}">
-            </div>
-            <button onclick="goToDetails('${recipeName}')">See recept</button>
+            <img class="img-box" src="${recipe.Afbeelding}" alt="${recipeName}"></img>
+            <button onclick="goToDetails('${recipeName}')">Zie recept</button>
         `;
         
         recipeList.appendChild(recipeDiv);
